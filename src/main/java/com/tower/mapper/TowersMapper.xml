@@ -37,7 +37,7 @@
 		left join tower_city c on a.City_id=c.City_id
 
 		where 1=1
-		and t.Tower_visible = 1
+		and (t.Tower_visible = 1 or  t.Tower_visible = 3)
 		and t.Tower_is_hb=0
 		<!-- admin -->
 		<if test="adminCitys!=null">
@@ -92,7 +92,7 @@
 		left join tower_city c on a.City_id=c.City_id
 
 		where 1=1
-		and t.Tower_visible =1
+		and (t.Tower_visible = 1 or  t.Tower_visible = 3)
 		and t.Tower_is_hb=0
 		<!-- admin -->
 		<if test="adminCitys!=null">
@@ -559,7 +559,14 @@
 		left join tower_tower_store s on s.storeid=t.Tower_store
 
 		where 1=1
-		and t.Tower_visible = #{towervisible}
+		<if test="towervisible==0">
+			and t.Tower_visible = #{towervisible}
+		</if>
+		<if test="towervisible==1">
+			and (t.Tower_visible = 1 or  t.Tower_visible = 3)
+		</if>
+		
+		
 		and t.Tower_is_hb=0
 		<!-- admin -->
 		<if test="adminCitys!=null">

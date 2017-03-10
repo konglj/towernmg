@@ -27,11 +27,6 @@
 		<property name="locations" value="classpath:*.properties">
 		</property>
 	</bean>
-	<bean id="webip" class="com.tower.common.Config">
-		<property name="webip" value="${web_root}" />
-		<property name="systemip" value="${system_web_root}" />
-		<property name="province" value="${province}" />
-	</bean>
 	<bean id="dataSource_default" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 

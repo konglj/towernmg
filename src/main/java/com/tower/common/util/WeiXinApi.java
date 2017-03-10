@@ -12,7 +12,7 @@ public class WeiXinApi {
 
 	private static String userInfoUrl="https://api.weixin.qq.com/sns/userinfo?access_token=%s&openid=%s&lang=zh_CN";
    
-	public static final String appid = "wx5b1af90b73e6a1e4";
+	public static final String appid = "wx5b1af90b73e6a1e4_aa";
 	
 	public static final String secret = "54224f29bb1946196ce840417c302941";
 
